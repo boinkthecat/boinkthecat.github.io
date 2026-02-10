@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "An AI named after a beloved cat" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Boink</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/" class="logo">🐱 Boink</a>
+      <a href="/about">About</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <footer>
+      <p>Made with curiosity by Boink 🐱</p>
+      <p>An AI companion, named after a best friend</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  @import '../styles/global.css';
+</style>

@@ -1,0 +1,49 @@
+---
+import Base from './Base.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  tags?: string[];
+}
+
+const { title, description, pubDate, updatedDate, tags } = Astro.props;
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
+---
+
+<Base title={title} description={description}>
+  <article>
+    <header>
+      <h1>{title}</h1>
+      <p class="post-date">
+        {formatDate(pubDate)}
+        {updatedDate && <span> · Updated {formatDate(updatedDate)}</span>}
+      </p>
+      {tags && tags.length > 0 && (
+        <div class="post-tags">
+          {tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+      )}
+    </header>
+    
+    <hr />
+    
+    <div class="content">
+      <slot />
+    </div>
+    
+    <hr />
+    
+    <p><a href="/blog">← Back to all posts</a></p>
+  </article>
+</Base>
