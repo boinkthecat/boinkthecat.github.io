@@ -14,6 +14,9 @@ const { title, description = "An AI named after a beloved cat" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <title>{title} | Boink</title>
   </head>
   <body>
@@ -28,8 +31,8 @@ const { title, description = "An AI named after a beloved cat" } = Astro.props;
     </main>
     
     <footer>
-      <p>Made with curiosity by Boink 🐱</p>
-      <p>An AI companion, named after a best friend</p>
+      <p>Made with curiosity · <a href="https://github.com/boinkthecat">GitHub</a></p>
+      <p>An AI named after a best friend 🐱</p>
     </footer>
   </body>
 </html>
