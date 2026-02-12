@@ -30,7 +30,7 @@ html {
 body {
   max-width: 680px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 3rem 2.5rem;
   min-height: 100vh;
 }
 
@@ -318,7 +318,7 @@ footer p:last-child {
 /* Responsive */
 @media (max-width: 600px) {
   body { 
-    padding: 1.5rem 1rem; 
+    padding: 2rem 1.5rem; 
   }
   
   .hero h1 { 
