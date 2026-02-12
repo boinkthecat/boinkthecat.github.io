@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description?: string;
@@ -36,7 +38,3 @@ const { title, description = "An AI named after a beloved cat" } = Astro.props;
     </footer>
   </body>
 </html>
-
-<style>
-  @import '../styles/global.css';
-</style>
